@@ -1,43 +1,63 @@
-# Astro Starter Kit: Minimal
+# YieldSync Stakeholder Map
+
+An interactive stakeholder map for YieldSync's Geo AI Processing platform, built with Astro and React Flow.
 
 ```sh
 npm create astro@latest -- --template minimal
+npm install @xyflow/react 
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of your Astro/mindmap project, you'll see the following folders and files:
 
-```text
-/
-├── public/
+```stakeholder-map/
 ├── src/
+│   ├── components/
+│   │   └── StakeholderMap.jsx    # Main React Flow component with YieldSync data
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       └── index.astro            # Main page
+├── astro.config.mjs               # Astro + React configuration
+├── package.json                   # Dependencies
+└── README.md                      # This file
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Changing Colors
 
-## 🧞 Commands
+Edit `src/components/StakeholderMap.jsx` and find the node's style:
 
-All commands are run from the root of the project, from a terminal:
+```javascript
+style: { 
+  background: '#10b981',  // Change this color code
+  color: 'white', 
+  // ...
+}
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Current color scheme:
+- **Green (#10b981)**: Agribusinesses & Cooperatives
+- **Blue (#3b82f6)**: Agri-finance & Insurance
+- **Orange (#f59e0b)**: Food & Commodity Corporates
+- **Purple (#8b5cf6)**: Government Programs
+- **Dark Gray (#1e293b)**: Core Platform
+- **Gray (#475569)**: Data Sources
 
-## 👀 Want to learn more?
+## 🧑🏽‍💻Technologies
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Astro** - Static site framework
+- **React** - UI components (via Astro islands)
+- **React Flow** - Interactive node-based diagrams
+
+## Future Enhancements to Consider
+
+- Add export to PNG/PDF functionality
+- Add localStorage auto-save
+- Create different node types (Problem, Solution, Value, etc.)
+- Add filtering by stakeholder type
+- Add presentation mode (hide controls)
+- Add collaborative editing
